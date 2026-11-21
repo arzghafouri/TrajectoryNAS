@@ -1,0 +1,103 @@
+{
+  "experiment": "audit",
+  "status": "completed",
+  "timestamp_utc": "2026-11-20T11:48:41Z",
+  "duration_seconds": 0.0,
+  "dataset_name": "nuscenes",
+  "dataset_paths": {
+    "dataroot_configured": "data/nuscenes",
+    "output_dir_configured": "data/nuscenes/v1.0-trainval",
+    "resolved_data_dir": "data/nuscenes/v1.0-trainval",
+    "train_file": null,
+    "val_file": null,
+    "train_exists": false,
+    "val_exists": false,
+    "dataset_ready": false
+  },
+  "checkpoint_audit": {
+    "requested_checkpoint": "checkpoints/best_trajectory_lnas.pt",
+    "checkpoint_exists": false,
+    "resolved_checkpoint_path": null,
+    "best_architecture_reference": {
+      "indices": [
+        3,
+        2,
+        0
+      ],
+      "names": [
+        "TemporalSelfAttention",
+        "SocialPooling",
+        "LaneAttention"
+      ],
+      "temporal": {
+        "index": 3,
+        "name": "TemporalSelfAttention"
+      },
+      "interaction": {
+        "index": 2,
+        "name": "SocialPooling"
+      },
+      "map": {
+        "index": 0,
+        "name": "LaneAttention"
+      },
+      "source": "/app/applet/python_src/checkpoints/best_architecture.json",
+      "checkpoint_metadata": {
+        "seed": 42,
+        "warmup_epochs": 10,
+        "batch_size": 64,
+        "grad_accum_steps": 4,
+        "lambda_flops": 0.0,
+        "search_samples_percent": 50.0
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "exists": false,
+      "path": null,
+      "sample_count": 0,
+      "status": "missing"
+    },
+    "val": {
+      "exists": false,
+      "path": null,
+      "sample_count": 0,
+      "status": "missing"
+    }
+  },
+  "scene_leakage": {
+    "scene_tokens_available": false,
+    "train_unique_scenes": null,
+    "val_unique_scenes": null,
+    "shared_scenes_count": null,
+    "shared_scenes_sample": [],
+    "leakage_detected": false,
+    "status": "NOT_VERIFIED_MISSING_FILES"
+  },
+  "metric_and_mode_audit": {
+    "model_config_num_modes": 5,
+    "model_config_past_len": 4,
+    "model_config_future_len": 12,
+    "model_config_hz": 2.0,
+    "model_config_past_sec": 2.0,
+    "model_config_future_sec": 6.0,
+    "darts_validate_k_hardcoded_note": "Observed in python_src/core/darts_algorithm.py (lines 237-242): DARTSAlgorithm.validate() passes k=6 to min_ade_k/min_fde_k while ModelConfig.num_modes=5. Inside evaluations/metrics.py (_top_k_predictions), k_eval=min(k, shape[1]) clamps k to 5, so numerical results reflect 5 modes. This experiment runner derives K dynamically from model.num_modes and pred_trajs.shape[1] across minADE, minFDE, and MissRate.",
+    "model_output_k_verified": null,
+    "all_metrics_same_k": null
+  },
+  "mask_and_padding_check": {
+    "executed": false,
+    "reason": "Requires PyTorch and extracted dataset sequence files."
+  },
+  "validation_vs_test_policy": "Processed 'val_sequences' represent the validation split. Do NOT report validation-split metrics as held-out final test benchmark scores.",
+  "unavailable_dataset_fields": [
+    "neighbors_future (cannot compute real Collision Rate without ground-truth neighbor futures)",
+    "explicit lane_change / turn signal annotations (only lane_connector, ped_crossing, and kinematic curvature proxies are derivable)"
+  ],
+  "warnings": [
+    "Real nuScenes sequence files not found under 'data/nuscenes/v1.0-trainval'. Run 'python python_src/data/preprocessing.py --dataroot <path_to_nuscenes>' before running training/search experiments."
+  ],
+  "blocking_issues": [],
+  "safe_to_compare_experiments": false
+}

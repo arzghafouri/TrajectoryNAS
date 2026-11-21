@@ -1,0 +1,890 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-11-08T07:03:37Z",
+  "dataset": "nuscenes",
+  "best_ops": [
+    3,
+    2,
+    0
+  ],
+  "best_indices": {
+    "temporal": 3,
+    "interaction": 2,
+    "map": 0
+  },
+  "discovered_architecture": {
+    "temporal": {
+      "index": 3,
+      "name": "TemporalSelfAttention"
+    },
+    "interaction": {
+      "index": 2,
+      "name": "SocialPooling"
+    },
+    "map": {
+      "index": 0,
+      "name": "LaneAttention"
+    },
+    "indices": [
+      3,
+      2,
+      0
+    ]
+  },
+  "epochs": 30,
+  "elapsed_seconds": 5966.26,
+  "zero_cost_proxies": {
+    "snip": 421.3248,
+    "synflow": 64608.5202
+  },
+  "search_history": [
+    {
+      "epoch": 1,
+      "is_warmup": true,
+      "train_loss": 2.2878,
+      "val_ade": 2.1275,
+      "val_fde": 4.1664,
+      "flops_g": 0.01116,
+      "temperature": 0.948,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 2,
+      "is_warmup": true,
+      "train_loss": 1.5868,
+      "val_ade": 1.6363,
+      "val_fde": 3.2263,
+      "flops_g": 0.01116,
+      "temperature": 0.898,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 3,
+      "is_warmup": true,
+      "train_loss": 1.4724,
+      "val_ade": 1.5705,
+      "val_fde": 3.1648,
+      "flops_g": 0.01116,
+      "temperature": 0.851,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 4,
+      "is_warmup": true,
+      "train_loss": 1.4063,
+      "val_ade": 1.6985,
+      "val_fde": 3.3012,
+      "flops_g": 0.01116,
+      "temperature": 0.807,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 5,
+      "is_warmup": true,
+      "train_loss": 1.3759,
+      "val_ade": 1.7407,
+      "val_fde": 3.669,
+      "flops_g": 0.01116,
+      "temperature": 0.765,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 6,
+      "is_warmup": true,
+      "train_loss": 1.3106,
+      "val_ade": 1.3698,
+      "val_fde": 2.7709,
+      "flops_g": 0.01116,
+      "temperature": 0.725,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 7,
+      "is_warmup": true,
+      "train_loss": 1.3005,
+      "val_ade": 1.4161,
+      "val_fde": 2.8935,
+      "flops_g": 0.01116,
+      "temperature": 0.687,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 8,
+      "is_warmup": true,
+      "train_loss": 1.2663,
+      "val_ade": 2.0166,
+      "val_fde": 4.3181,
+      "flops_g": 0.01116,
+      "temperature": 0.651,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 9,
+      "is_warmup": true,
+      "train_loss": 1.2618,
+      "val_ade": 1.6093,
+      "val_fde": 3.4218,
+      "flops_g": 0.01116,
+      "temperature": 0.617,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 10,
+      "is_warmup": true,
+      "train_loss": 1.2475,
+      "val_ade": 1.5928,
+      "val_fde": 3.1487,
+      "flops_g": 0.01116,
+      "temperature": 0.585,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 11,
+      "is_warmup": false,
+      "train_loss": 1.2258,
+      "val_ade": 1.4867,
+      "val_fde": 3.1036,
+      "flops_g": 0.01116,
+      "temperature": 0.554,
+      "alphas": {
+        "temporal": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "interaction": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "map": [
+          0.3333,
+          0.3333,
+          0.3333
+        ]
+      }
+    },
+    {
+      "epoch": 12,
+      "is_warmup": false,
+      "train_loss": 1.2464,
+      "val_ade": 1.3316,
+      "val_fde": 2.7478,
+      "flops_g": 0.01113,
+      "temperature": 0.525,
+      "alphas": {
+        "temporal": [
+          0.2524,
+          0.2524,
+          0.2429,
+          0.2524
+        ],
+        "interaction": [
+          0.2476,
+          0.2476,
+          0.2572,
+          0.2476
+        ],
+        "map": [
+          0.3375,
+          0.3249,
+          0.3375
+        ]
+      }
+    },
+    {
+      "epoch": 13,
+      "is_warmup": false,
+      "train_loss": 1.2084,
+      "val_ade": 1.5278,
+      "val_fde": 3.0075,
+      "flops_g": 0.01111,
+      "temperature": 0.498,
+      "alphas": {
+        "temporal": [
+          0.2535,
+          0.2527,
+          0.2401,
+          0.2537
+        ],
+        "interaction": [
+          0.2478,
+          0.2424,
+          0.2601,
+          0.2497
+        ],
+        "map": [
+          0.3412,
+          0.3187,
+          0.3401
+        ]
+      }
+    },
+    {
+      "epoch": 14,
+      "is_warmup": false,
+      "train_loss": 1.1926,
+      "val_ade": 1.6535,
+      "val_fde": 3.4929,
+      "flops_g": 0.01109,
+      "temperature": 0.472,
+      "alphas": {
+        "temporal": [
+          0.2558,
+          0.2544,
+          0.2332,
+          0.2566
+        ],
+        "interaction": [
+          0.2435,
+          0.2371,
+          0.2647,
+          0.2547
+        ],
+        "map": [
+          0.3404,
+          0.3134,
+          0.3461
+        ]
+      }
+    },
+    {
+      "epoch": 15,
+      "is_warmup": false,
+      "train_loss": 1.172,
+      "val_ade": 1.4139,
+      "val_fde": 3.0268,
+      "flops_g": 0.01108,
+      "temperature": 0.447,
+      "alphas": {
+        "temporal": [
+          0.2582,
+          0.2552,
+          0.2288,
+          0.2579
+        ],
+        "interaction": [
+          0.2372,
+          0.2357,
+          0.2655,
+          0.2616
+        ],
+        "map": [
+          0.3385,
+          0.3099,
+          0.3515
+        ]
+      }
+    },
+    {
+      "epoch": 16,
+      "is_warmup": false,
+      "train_loss": 1.1612,
+      "val_ade": 1.449,
+      "val_fde": 2.9489,
+      "flops_g": 0.01106,
+      "temperature": 0.424,
+      "alphas": {
+        "temporal": [
+          0.2612,
+          0.2573,
+          0.2206,
+          0.2609
+        ],
+        "interaction": [
+          0.2313,
+          0.2315,
+          0.2705,
+          0.2667
+        ],
+        "map": [
+          0.3421,
+          0.3016,
+          0.3563
+        ]
+      }
+    },
+    {
+      "epoch": 17,
+      "is_warmup": false,
+      "train_loss": 1.1375,
+      "val_ade": 1.3968,
+      "val_fde": 2.9532,
+      "flops_g": 0.01107,
+      "temperature": 0.402,
+      "alphas": {
+        "temporal": [
+          0.2611,
+          0.2564,
+          0.2207,
+          0.2617
+        ],
+        "interaction": [
+          0.2299,
+          0.2293,
+          0.2706,
+          0.2703
+        ],
+        "map": [
+          0.3444,
+          0.3038,
+          0.3518
+        ]
+      }
+    },
+    {
+      "epoch": 18,
+      "is_warmup": false,
+      "train_loss": 1.139,
+      "val_ade": 1.6388,
+      "val_fde": 3.3008,
+      "flops_g": 0.01106,
+      "temperature": 0.381,
+      "alphas": {
+        "temporal": [
+          0.26,
+          0.2546,
+          0.2194,
+          0.266
+        ],
+        "interaction": [
+          0.228,
+          0.2264,
+          0.2747,
+          0.2708
+        ],
+        "map": [
+          0.3563,
+          0.2984,
+          0.3453
+        ]
+      }
+    },
+    {
+      "epoch": 19,
+      "is_warmup": false,
+      "train_loss": 1.1401,
+      "val_ade": 1.4762,
+      "val_fde": 2.9752,
+      "flops_g": 0.01107,
+      "temperature": 0.361,
+      "alphas": {
+        "temporal": [
+          0.2602,
+          0.2535,
+          0.2128,
+          0.2735
+        ],
+        "interaction": [
+          0.2233,
+          0.2261,
+          0.2781,
+          0.2726
+        ],
+        "map": [
+          0.3674,
+          0.2954,
+          0.3372
+        ]
+      }
+    },
+    {
+      "epoch": 20,
+      "is_warmup": false,
+      "train_loss": 1.1205,
+      "val_ade": 1.4429,
+      "val_fde": 2.9135,
+      "flops_g": 0.01108,
+      "temperature": 0.342,
+      "alphas": {
+        "temporal": [
+          0.2587,
+          0.2513,
+          0.2143,
+          0.2757
+        ],
+        "interaction": [
+          0.2206,
+          0.2262,
+          0.2767,
+          0.2766
+        ],
+        "map": [
+          0.3756,
+          0.2946,
+          0.3297
+        ]
+      }
+    },
+    {
+      "epoch": 21,
+      "is_warmup": false,
+      "train_loss": 1.1148,
+      "val_ade": 1.2656,
+      "val_fde": 2.4331,
+      "flops_g": 0.01104,
+      "temperature": 0.324,
+      "alphas": {
+        "temporal": [
+          0.2595,
+          0.2486,
+          0.2148,
+          0.2771
+        ],
+        "interaction": [
+          0.2218,
+          0.2171,
+          0.2826,
+          0.2785
+        ],
+        "map": [
+          0.3829,
+          0.2844,
+          0.3326
+        ]
+      }
+    },
+    {
+      "epoch": 22,
+      "is_warmup": false,
+      "train_loss": 1.0899,
+      "val_ade": 1.3293,
+      "val_fde": 2.7327,
+      "flops_g": 0.01104,
+      "temperature": 0.307,
+      "alphas": {
+        "temporal": [
+          0.2574,
+          0.2454,
+          0.2209,
+          0.2763
+        ],
+        "interaction": [
+          0.224,
+          0.2106,
+          0.2842,
+          0.2812
+        ],
+        "map": [
+          0.3883,
+          0.2834,
+          0.3282
+        ]
+      }
+    },
+    {
+      "epoch": 23,
+      "is_warmup": false,
+      "train_loss": 1.0823,
+      "val_ade": 1.4694,
+      "val_fde": 2.9313,
+      "flops_g": 0.01103,
+      "temperature": 0.291,
+      "alphas": {
+        "temporal": [
+          0.2517,
+          0.2394,
+          0.2306,
+          0.2782
+        ],
+        "interaction": [
+          0.2295,
+          0.2021,
+          0.2866,
+          0.2818
+        ],
+        "map": [
+          0.3978,
+          0.2823,
+          0.3199
+        ]
+      }
+    },
+    {
+      "epoch": 24,
+      "is_warmup": false,
+      "train_loss": 1.0651,
+      "val_ade": 1.5468,
+      "val_fde": 3.2077,
+      "flops_g": 0.01099,
+      "temperature": 0.276,
+      "alphas": {
+        "temporal": [
+          0.2488,
+          0.2339,
+          0.2294,
+          0.2878
+        ],
+        "interaction": [
+          0.2294,
+          0.1907,
+          0.2971,
+          0.2829
+        ],
+        "map": [
+          0.3952,
+          0.2803,
+          0.3245
+        ]
+      }
+    },
+    {
+      "epoch": 25,
+      "is_warmup": false,
+      "train_loss": 1.0606,
+      "val_ade": 1.313,
+      "val_fde": 2.7343,
+      "flops_g": 0.01096,
+      "temperature": 0.262,
+      "alphas": {
+        "temporal": [
+          0.2491,
+          0.2319,
+          0.2206,
+          0.2983
+        ],
+        "interaction": [
+          0.2264,
+          0.1826,
+          0.3045,
+          0.2866
+        ],
+        "map": [
+          0.403,
+          0.2723,
+          0.3247
+        ]
+      }
+    },
+    {
+      "epoch": 26,
+      "is_warmup": false,
+      "train_loss": 1.0649,
+      "val_ade": 1.2252,
+      "val_fde": 2.5421,
+      "flops_g": 0.01094,
+      "temperature": 0.248,
+      "alphas": {
+        "temporal": [
+          0.2495,
+          0.2288,
+          0.2086,
+          0.3132
+        ],
+        "interaction": [
+          0.2205,
+          0.1748,
+          0.3101,
+          0.2946
+        ],
+        "map": [
+          0.4031,
+          0.2689,
+          0.328
+        ]
+      }
+    },
+    {
+      "epoch": 27,
+      "is_warmup": false,
+      "train_loss": 1.0554,
+      "val_ade": 1.34,
+      "val_fde": 2.8178,
+      "flops_g": 0.01086,
+      "temperature": 0.235,
+      "alphas": {
+        "temporal": [
+          0.2498,
+          0.2257,
+          0.1968,
+          0.3278
+        ],
+        "interaction": [
+          0.2271,
+          0.1638,
+          0.3267,
+          0.2823
+        ],
+        "map": [
+          0.4187,
+          0.2502,
+          0.3312
+        ]
+      }
+    },
+    {
+      "epoch": 28,
+      "is_warmup": false,
+      "train_loss": 1.0482,
+      "val_ade": 1.3544,
+      "val_fde": 2.6413,
+      "flops_g": 0.01077,
+      "temperature": 0.223,
+      "alphas": {
+        "temporal": [
+          0.2531,
+          0.225,
+          0.1815,
+          0.3404
+        ],
+        "interaction": [
+          0.2273,
+          0.1533,
+          0.3465,
+          0.2729
+        ],
+        "map": [
+          0.4236,
+          0.233,
+          0.3435
+        ]
+      }
+    },
+    {
+      "epoch": 29,
+      "is_warmup": false,
+      "train_loss": 1.0352,
+      "val_ade": 1.442,
+      "val_fde": 2.9877,
+      "flops_g": 0.01076,
+      "temperature": 0.211,
+      "alphas": {
+        "temporal": [
+          0.2503,
+          0.2217,
+          0.1793,
+          0.3487
+        ],
+        "interaction": [
+          0.2258,
+          0.1495,
+          0.3514,
+          0.2733
+        ],
+        "map": [
+          0.4402,
+          0.2249,
+          0.3349
+        ]
+      }
+    },
+    {
+      "epoch": 30,
+      "is_warmup": false,
+      "train_loss": 1.0407,
+      "val_ade": 1.4332,
+      "val_fde": 2.9193,
+      "flops_g": 0.01077,
+      "temperature": 0.2,
+      "alphas": {
+        "temporal": [
+          0.2467,
+          0.2178,
+          0.1845,
+          0.351
+        ],
+        "interaction": [
+          0.228,
+          0.1458,
+          0.3497,
+          0.2765
+        ],
+        "map": [
+          0.4616,
+          0.2193,
+          0.3191
+        ]
+      }
+    }
+  ],
+  "search_config": {
+    "seed": 42,
+    "warmup_epochs": 10,
+    "batch_size": 64,
+    "grad_accum_steps": 4,
+    "lambda_flops": 0.0,
+    "search_samples_percent": 50.0
+  }
+}

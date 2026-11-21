@@ -1,0 +1,23 @@
+{
+  "status": "NOT_EXTRACTED",
+  "dataset_path": "data/nuscenes/v1.0-trainval",
+  "model_config_dimensions": {
+    "past_len": 4,
+    "future_len": 12,
+    "hz": 2.0,
+    "dt_seconds": 0.5,
+    "max_agents": 20,
+    "max_lanes": 32,
+    "lane_pts": 16,
+    "max_obstacles": 20,
+    "num_modes": 5
+  },
+  "train_config_policies": {
+    "hard_sample_mining": 0.5,
+    "hard_sample_ema": 0.7,
+    "early_stopping_patience": 8
+  },
+  "warnings": [
+    "Dataset sequences not found at data/nuscenes/v1.0-trainval. Extract using 'python data/preprocessing.py' or run tests in synthetic mode."
+  ]
+}

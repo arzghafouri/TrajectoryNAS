@@ -1,0 +1,35 @@
+Role & Context:
+We are developing a Trajectory Prediction model based on the nuScenes dataset with a Supernet search (TrajectoryNAS) and Final Model architecture in PyTorch (`preprocessing.py`, `final_model.py`, `search_supernet.py`, `supernet_operators.py`).
+
+Problem:
+Currently, in `preprocessing.py`:
+1. Stationary/low-motion target agents are filtered out ONLY from the validation split (`if split_name.lower() == "val" and not is_genuinely_moving(...)`), while the training split retains stationary targets. This introduces a major distribution mismatch and causes the model to optimize for trivial zero-velocity predictions on static targets during training.
+2. Static obstacles and parked/stationary objects must act strictly as environmental context (neighbors/obstacles) in the Interaction branch, rather than target prediction goals.
+
+Objective:
+Align preprocessing across Train and Val splits uniformly:
+- Remove stationary and low-motion agents from being selected as PRIMARY TARGETS in BOTH `Train` and `Val`.
+- Ensure all stationary/parked vehicles and static obstacles remain fully accessible in the scene as NEIGHBOR / OBSTACLE tokens for the Interaction branch.
+
+Please implement the following changes:
+
+---
+
+### Task 1: Update Preprocessing (`preprocessing.py`)
+1. **Uniform Motion Filtering for Target Selection:**
+   - In the target extraction loop (around line 739–744), apply `is_genuinely_moving(sampled_past, t_past)` uniformly to BOTH `Train` and `Val` splits.
+   - Any agent whose past speed does not exceed the threshold (e.g. `0.5 m/s`) must be skipped from being saved as an independent target sample (`future_traj` supervision).
+2. **Preserve Static Agents as Context/Neighbors:**
+   - Ensure the neighbor extraction logic (around line 760–800) still captures parked vehicles and low-motion agents as `neighbor_candidates`.
+   - Do NOT apply the motion filter to neighbors; neighbor context must include both moving agents and stationary/parked objects to provide physical occupancy context.
+3. **Data Verification:**
+   - Verify that generated dataset dictionaries continue to supply valid `neighbors_past`, `neighbor_categories`, and `static_objects` for every valid moving target.
+
+---
+
+### Task 2: Model Interaction Verification (`final_model.py` & `search_supernet.py`)
+1. **Verify Neighbor & Obstacle Processing:**
+   - Ensure `agents_past` (dynamic + parked neighbors) and `static_obstacles` (scene static categories) continue to pass correctly through the interaction pipeline (`obstacle_proj`, `obstacle_type_emb`, and concatenation with `neighbor_feats`).
+   - Confirm that masks (`agent_mask`, `obstacle_mask`) correctly account for all valid context tokens without zero-division or numerical instability in attention/GNN ops.
+2. **Preserve API Signatures:**
+   - Keep the forward signature and output formats `[B, K, future_len, 2]` and `mode_logits [B, K]` intact and backward compatible with existing configurations (`ModelConfig`, `SearchConfig`).

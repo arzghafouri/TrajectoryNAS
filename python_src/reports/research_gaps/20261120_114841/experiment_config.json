@@ -1,0 +1,184 @@
+{
+  "timestamp_utc": "2026-11-20T11:48:41Z",
+  "repo_root": "/app/applet",
+  "python_src": "/app/applet/python_src",
+  "output_dir": "/app/applet/reports/research_gaps/20261120_114841",
+  "cli_args": {
+    "experiment": "audit",
+    "dataset": "nuscenes",
+    "data_path": null,
+    "checkpoint": "checkpoints/best_trajectory_lnas.pt",
+    "seed": 42,
+    "seeds": [
+      42
+    ],
+    "device": "auto",
+    "batch_size": null,
+    "grad_accum_steps": null,
+    "search_epochs": null,
+    "warmup_epochs": null,
+    "final_epochs": null,
+    "search_samples_percent": null,
+    "train_samples_percent": null,
+    "lambda_flops_values": null,
+    "run_lambda_search": false,
+    "run_scene_prototype": false,
+    "hw_warmup": 25,
+    "hw_runs": 100,
+    "max_experiments": null,
+    "resume": null,
+    "output_dir": null,
+    "gradient_checkpointing": false,
+    "no_amp": false,
+    "allow_untrained": false,
+    "dry_run": false
+  },
+  "planned_sections": [
+    "audit"
+  ],
+  "hardware_environment": {
+    "os": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+    "python_version": "3.11.2",
+    "cpu": "x86_64",
+    "cpu_count": 2,
+    "has_torch": false,
+    "has_numpy": false,
+    "has_matplotlib": false,
+    "torch_version": null,
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_model": null,
+    "gpu_total_vram_mb": null,
+    "selected_device": "unavailable"
+  },
+  "reference_architecture": {
+    "indices": [
+      3,
+      2,
+      0
+    ],
+    "names": [
+      "TemporalSelfAttention",
+      "SocialPooling",
+      "LaneAttention"
+    ],
+    "temporal": {
+      "index": 3,
+      "name": "TemporalSelfAttention"
+    },
+    "interaction": {
+      "index": 2,
+      "name": "SocialPooling"
+    },
+    "map": {
+      "index": 0,
+      "name": "LaneAttention"
+    },
+    "source": "/app/applet/python_src/checkpoints/best_architecture.json",
+    "checkpoint_metadata": {
+      "seed": 42,
+      "warmup_epochs": 10,
+      "batch_size": 64,
+      "grad_accum_steps": 4,
+      "lambda_flops": 0.0,
+      "search_samples_percent": 50.0
+    }
+  },
+  "dataset_resolution": {
+    "dataroot_configured": "data/nuscenes",
+    "output_dir_configured": "data/nuscenes/v1.0-trainval",
+    "resolved_data_dir": "data/nuscenes/v1.0-trainval",
+    "train_file": null,
+    "val_file": null,
+    "train_exists": false,
+    "val_exists": false,
+    "dataset_ready": false
+  },
+  "checkpoint_resolved": null,
+  "model_config": {
+    "d_model": 128,
+    "hz": 2,
+    "past_sec": 2.0,
+    "future_sec": 6.0,
+    "past_len": 4,
+    "future_len": 12,
+    "num_modes": 5,
+    "max_agents": 20,
+    "max_obstacles": 10,
+    "max_lanes": 30,
+    "lane_pts": 15,
+    "dropout": 0.1
+  },
+  "default_search_config": {
+    "dataset": "nuscenes",
+    "train_path": "data/nuscenes/v1.0-trainval",
+    "val_path": "data/nuscenes/v1.0-trainval",
+    "seed": 42,
+    "warmup_epochs": 10,
+    "epochs": 30,
+    "batch_size": 64,
+    "grad_accum_steps": 4,
+    "use_amp": true,
+    "lr_weights": 0.001,
+    "lr_alphas": 0.01,
+    "weight_decay": 0.0001,
+    "alpha_weight_decay": 0.0,
+    "val_batches_for_alpha": 1,
+    "lambda_flops": 0.0005,
+    "temperature_start": 1.0,
+    "temperature_min": 0.2,
+    "search_samples_percent": 50.0,
+    "gradient_checkpointing": false,
+    "device": "cuda",
+    "optimization_strategy": "Bilevel / First-Order DARTS",
+    "temporal_ops": [
+      "GRUEncoder",
+      "LSTMEncoder",
+      "TemporalConvEncoder",
+      "TemporalSelfAttention"
+    ],
+    "interaction_ops": [
+      "GCNLayer",
+      "GATLayer",
+      "SocialPooling",
+      "PairwiseAttention"
+    ],
+    "map_ops": [
+      "LaneAttention",
+      "LaneGraphEncoder",
+      "MapFeatureFusion"
+    ]
+  },
+  "default_train_config": {
+    "dataset": "nuscenes",
+    "train_path": "data/nuscenes/v1.0-trainval",
+    "val_path": "data/nuscenes/v1.0-trainval",
+    "seed": 42,
+    "epochs": 60,
+    "batch_size": 128,
+    "grad_accum_steps": 2,
+    "use_amp": true,
+    "lr": 0.00075,
+    "min_lr": 1e-05,
+    "weight_decay": 0.0001,
+    "clip_grad_norm": 5.0,
+    "early_stopping_patience": 8,
+    "early_stopping_min_delta": 0.002,
+    "train_samples_percent": null,
+    "hard_sample_mining": 0.3,
+    "hard_sample_ema": 0.7,
+    "save_path": "checkpoints/best_trajectory_lnas.pt",
+    "device": "cuda"
+  },
+  "default_data_config": {
+    "dataroot": "data/nuscenes",
+    "output_dir": "data/nuscenes/v1.0-trainval",
+    "target_count": null,
+    "category": null,
+    "mode": "auto",
+    "seed": 42,
+    "max_train_scenes": null,
+    "max_val_scenes": null,
+    "resume_extraction": true
+  }
+}

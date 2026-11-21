@@ -1,0 +1,27 @@
+Please implement a comprehensive visualization script in Python that generates and saves two professional, publication-ready figures for our trajectory prediction model (nuScenes-based supernet architecture). 
+
+Requirements:
+
+1. **Figure 1: DARTS Architecture Search & Config Summary (2x2 Subplots Grid)**
+   - Read search history and alpha weights dynamically from `best_architecture.json`. If the file is missing, handle gracefully with a fallback structure.
+   - **Subplot (1,1):** Temporal branch alpha evolution across search epochs (line plot for each operation).
+   - **Subplot (1,2):** Interaction branch alpha evolution across search epochs.
+   - **Subplot (1,3):** Map branch alpha evolution across search epochs.
+- **Subplot (1,4):** A clean, formatted text box acting as a reference guide for core configuration parameters. 
+  - **Dynamic Loading:** Do NOT hardcode the parameter values. Dynamically import or load them from `configs.search_config` (or `configs.model_config` / `SearchConfig`), reading attributes:
+    - `cfg.max_agents`
+    - `cfg.max_obstacles`
+    - `cfg.max_lanes`
+    - `cfg.lane_pts`
+  - Fall back gracefully to `(20, 10, 30, 15)` only if the config object cannot be imported.
+  - Display these values along with architecture metadata (e.g., "Unified 3-Branch Supernet", "Selection Metric: Val ADE/FDE").
+     - Architecture: Unified 3-Branch Supernet
+     - Selection Metric: Validation ADE / FDE
+   - Save the resulting figure as `architecture_search_trends.png` (dpi=300).
+
+2. **Figure 2: Training Phase Dynamics (2-Row Shared X-Axis Layout)**
+   - **Top Subplot (Loss & Gradients):** Plot training loss (incorporating Hard Sample Mining effects) and validation loss curves over training epochs, alongside a secondary Y-axis (or distinct line) tracking L2 Gradient Norm stability.
+   - **Bottom Subplot (Learning Rate Schedule):** Plot the learning rate decay curve reflecting Cosine Annealing policy.
+   - Save the resulting figure as `training_convergence_dynamics.png` (dpi=300).
+
+Ensure the plots use professional styling (e.g., seaborn-inspired grids, clear legends, bold titles, and appropriate line widths) and integrate cleanly into our existing codebase utility modules.

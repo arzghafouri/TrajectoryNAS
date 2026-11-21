@@ -1,0 +1,6 @@
+{
+  "name": "TrajectoryLNAS AI Platform",
+  "description": "Python scientific machine learning backend and minimalist frontend workspace",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
